@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from 'react';
 import { MdOutlineKeyboardArrowDown } from 'react-icons/md';
 import Item from '../components/Item';
 import { ShopContext } from '../Context/ShopContext';
+import { BASE_URL } from '../../Url';
 
 const Category = ({ category, banner }) => {
   const { all_products } = useContext(ShopContext);
@@ -14,7 +15,7 @@ const Category = ({ category, banner }) => {
   }, [category]); 
 
   useEffect(() => {
-    fetch('http://localhost:4000/allproducts')
+    fetch(`{BASE_URL}/allproducts`)
       .then((response) => response.json())
       .then((data) => setAllProducts(data));
   }, []);

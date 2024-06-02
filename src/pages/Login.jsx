@@ -22,7 +22,7 @@ const Login = () => {
   const login = async () => {
     
     try {
-      const response = await fetch('http://localhost:4000/login', {
+      const response = await fetch(`{BASE_URL}/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -60,7 +60,7 @@ const Login = () => {
     console.log('sign function executed', formData);
     
     try {
-      const response = await fetch('http://localhost:4000/signup', {
+      const response = await fetch(`{BASE_URL}/signup`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
